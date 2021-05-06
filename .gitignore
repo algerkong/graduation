@@ -1,4 +1,5 @@
 project/node_modules
+graduation-api/node_modules
 
 # local env files
 .env.local
