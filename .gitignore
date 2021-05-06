@@ -1,4 +1,5 @@
 project/node_modules
+PhotoApi/PhotoApi/ClientApp/node_modules
 
 # local env files
 .env.local
