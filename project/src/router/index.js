@@ -1,38 +1,44 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Home = ()=> import('../views/home/Home')
-const Chat= ()=> import('../views/chat/Chat')
-const User = ()=> import('../views/user/User')
-const Search = ()=> import('../views/search/Search')
+const Home = () => import('../views/home/Home')
+const Chat = () => import('../views/chat/Chat')
+const User = () => import('../views/user/User')
+const Search = () => import('../views/search/Search')
 
 
 Vue.use(VueRouter)
 const routes = [
   {
-    path:'',
-    redirect:'/home'
+    path: '',
+    redirect: '/home'
   },
   {
     path: '/home',
-    component:Home
+    component: Home,
+    meta: {
+      requiresAuth: true
+    }
   },
-    {
+  {
     path: '/chat',
-    component:Chat
+    component: Chat,
+    meta: {
+      requiresAuth: true
+    }
   },
-    {
+  {
     path: '/user',
-    component:User
+    component: User
   },
-    {
+  {
     path: '/search',
-    component:Search
+    component: Search
   },
 ]
 const router = new VueRouter({
   routes,
-  mode:'history'
+  mode: 'history'
 })
 
-export default  router
+export default router

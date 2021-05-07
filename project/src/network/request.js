@@ -1,5 +1,8 @@
 import axios from 'axios'
 import baseUrl from "common/const"
+import store from '../store'
+import types from '../common/types'
+import router from 'router'
 
 export function request(config) {
     const instance = axios.create({
@@ -15,6 +18,11 @@ export function request(config) {
     //2. 每次发送网络请求时, 都希望在界面中添加一个请求的图标
     //3. 某些网络请求(比如 登录token) 必须携带一些特殊的信息
     instance.interceptors.request.use(config => {
+        config => {
+            if (store.state.token) {
+                config.headers.Authorization = `token ${store.state.token}`
+            }
+        }
         return config
     }, err => {
         console.log(err);
@@ -25,7 +33,16 @@ export function request(config) {
         //响应拦截必须返回res.data
         return res.data
     }, err => {
-        console.log(err);
+        if (err.response) {
+            switch (err.response.status) {
+                case 401:
+                    store.commit(types.LOGOUT)
+                    router.replace({
+                        path: '/user'
+                    })
+            }
+        }
+        return Promise.reject(err.response.data)
     });
 
     //返回promise

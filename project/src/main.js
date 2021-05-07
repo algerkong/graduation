@@ -6,18 +6,44 @@ import { Lazyload } from 'vant';
 import router from './router'
 import "tailwindcss/tailwind.css"
 import store from './store'
+import { Toast } from 'vant';
+import axios from 'axios'
+import VueCookies from 'vue-cookies'
+
 
 Vue.config.productionTip = false
 
 Vue.use(Vant);
 Vue.use(Lazyload);
+Vue.use(Toast);
+
+Vue.use(VueCookies)
 
 Vue.prototype.$store = store
+Vue.prototype.$toast = Toast
+Vue.prototype.$cookies = VueCookies
 
-import axios from 'axios'
+
 axios.defaults.withCredentials = true
 Vue.prototype.$axios = axios
-axios.defaults.baseURL = '/api'
+
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+
+    console.log('aaa');
+
+    if (store.state.token == null) {
+      next({
+        path: '/user'
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})
 
 new Vue({
   render: h => h(App),

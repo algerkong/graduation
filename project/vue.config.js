@@ -9,6 +9,7 @@ module.exports = {
         'common': '@/common',
         'router': '@/router',
         'views': '@/views',
+        'store': '@/store'
       }
     }
   },

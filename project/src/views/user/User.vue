@@ -22,6 +22,7 @@
 
 <script>
 import { userLogin, SearchVirus } from "network/api/user";
+import types from "common/types";
 
 export default {
   name: "User",
@@ -33,11 +34,16 @@ export default {
   },
   methods: {
     btnLogin() {
+      let that = this;
       let formData = new FormData();
       formData.append("userid", this.userid);
       formData.append("password", this.password);
+      formData.append("rememberLogin", "true");
+      formData.append("cookie", "true");
+
       userLogin(formData).then((res) => {
         console.log(res);
+        that.$toast("登录成功");
       });
 
       let data = {
@@ -49,6 +55,8 @@ export default {
       SearchVirus(data).then((res) => {
         console.log(res);
       });
+
+      console.log(this.$cookies.get("token"));
     },
   },
 };
