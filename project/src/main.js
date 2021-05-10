@@ -9,6 +9,8 @@ import store from './store'
 import { Toast } from 'vant';
 import axios from 'axios'
 import VueCookies from 'vue-cookies'
+import types from "common/types";
+
 
 
 Vue.config.productionTip = false
@@ -30,9 +32,10 @@ Vue.prototype.$axios = axios
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-
-    console.log('aaa');
-
+    console.log("获取token", VueCookies.get("token"));
+    if (VueCookies.get("token")) {
+      store.commit(types.LOGIN, VueCookies.get("token"));
+    }
     if (store.state.token == null) {
       next({
         path: '/user'

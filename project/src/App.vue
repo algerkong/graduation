@@ -11,10 +11,9 @@ export default {
   name: "App",
   components: { TabBar },
   data() {
-    return {
-      
-    };
+    return {};
   },
+  created() {},
 };
 </script>
 

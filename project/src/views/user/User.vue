@@ -16,12 +16,17 @@
         v-model="password"
       />
       <van-button class="bg-blue-500 rounded-full text-white text-base" @click="btnLogin">登陆</van-button>
+      <van-button
+        v-if="this.$store.state.token"
+        class="bg-red-500 rounded-full text-white text-base mt-4"
+        @click="btnLogout"
+      >退出登录</van-button>
     </div>
   </div>
 </template>
 
 <script>
-import { userLogin, SearchVirus } from "network/api/user";
+import { userLogin, SearchVirus, userLogout } from "network/api/user";
 import types from "common/types";
 
 export default {
@@ -44,19 +49,26 @@ export default {
       userLogin(formData).then((res) => {
         console.log(res);
         that.$toast("登录成功");
-      });
+        that.$store.commit(types.LOGIN, that.$cookies.get("token"));
 
-      let data = {
-        Page: 1,
-        Limit: 10,
-        Count: 0,
-        PageCount: 0,
-      };
-      SearchVirus(data).then((res) => {
+        let data = {
+          Page: 1,
+          Limit: 10,
+          Count: 0,
+          PageCount: 0,
+        };
+        SearchVirus(data).then((res) => {
+          console.log(res);
+        });
+      });
+    },
+
+    btnLogout() {
+      let that = this;
+      userLogout(that.$store.state.token).then((res) => {
+        that.$store.commit(types.LOGOUT);
         console.log(res);
       });
-
-      console.log(this.$cookies.get("token"));
     },
   },
 };

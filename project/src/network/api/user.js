@@ -12,6 +12,14 @@ export function userLogin(formData) {
     })
 }
 
+
+export function userLogout(id) {
+    return request({
+        method: 'get',
+        url: '/_login/Logout/' + id
+    })
+}
+
 export function SearchVirus(data) {
     return request({
         method: 'post',
