@@ -1,6 +1,7 @@
 project/node_modules
 <<<<<<< HEAD
 PhotoApi/PhotoApi/ClientApp/node_modules
+PhotoApi(2)/PhotoApi/ClientApp/node_modules
 =======
 graduation-api/node_modules
 >>>>>>> 55802e6cda5b5596e6c619e391440bb49eab0a2d
