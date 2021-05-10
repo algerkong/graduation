@@ -1,7 +1,8 @@
 
 let types = {
     LOGIN: 'login',
-    LOGOUT: 'logout'
+    LOGOUT: 'logout',
+    ISLOGIN: 'isLogin'
 }
 
 export default types

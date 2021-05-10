@@ -42,7 +42,7 @@ export function request(config) {
                     })
             }
         }
-        return Promise.reject(err.response.data)
+        return Promise.reject(err.response)
     });
 
     //返回promise

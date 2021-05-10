@@ -31,20 +31,25 @@ Vue.prototype.$axios = axios
 
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    console.log("获取token", VueCookies.get("token"));
-    if (VueCookies.get("token")) {
-      store.commit(types.LOGIN, VueCookies.get("token"));
-    }
-    if (store.state.token == null) {
-      next({
-        path: '/user'
-      })
+  try {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+      console.log("获取登陆状态", VueCookies.get(types.ISLOGIN));
+      if (VueCookies.get(types.ISLOGIN)) {
+        store.commit(types.LOGIN);
+      }
+      if (store.state.isLogin == false || store.state.isLogin == null) {
+        Toast('请先登陆')
+        next({
+          path: '/user'
+        })
+      } else {
+        next()
+      }
     } else {
       next()
     }
-  } else {
-    next()
+  } catch (error) {
+
   }
 })
 

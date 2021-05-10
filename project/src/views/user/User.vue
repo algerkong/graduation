@@ -17,7 +17,7 @@
       />
       <van-button class="bg-blue-500 rounded-full text-white text-base" @click="btnLogin">登陆</van-button>
       <van-button
-        v-if="this.$store.state.token"
+        v-if="this.$store.state.isLogin"
         class="bg-red-500 rounded-full text-white text-base mt-4"
         @click="btnLogout"
       >退出登录</van-button>
@@ -37,6 +37,7 @@ export default {
       password: "",
     };
   },
+  created() {},
   methods: {
     btnLogin() {
       let that = this;
@@ -49,8 +50,9 @@ export default {
       userLogin(formData).then((res) => {
         console.log(res);
         that.$toast("登录成功");
-        that.$store.commit(types.LOGIN, that.$cookies.get("token"));
-
+        that.$cookies.set(types.ISLOGIN, true);
+        that.$store.commit(types.LOGIN);
+        console.log(that.$cookies.keys());
         let data = {
           Page: 1,
           Limit: 10,
@@ -67,6 +69,7 @@ export default {
       let that = this;
       userLogout(that.$store.state.token).then((res) => {
         that.$store.commit(types.LOGOUT);
+        this.$cookies.remove(types.ISLOGIN);
         console.log(res);
       });
     },

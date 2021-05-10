@@ -6,16 +6,17 @@ Vue.use(Vuex)
 
 const state = {
     user: {},
-    token: null
+    isLogin: null
 }
 
 const mutations = {
-    [types.LOGIN]: (state, data) => {
-        state.token = data;
-        console.log(data);
+    [types.LOGIN]: (state) => {
+        state.isLogin = true;
+
     },
     [types.LOGOUT]: (state) => {
-        state.token = null;
+        state.isLogin = false;
+
     },
 }
 
