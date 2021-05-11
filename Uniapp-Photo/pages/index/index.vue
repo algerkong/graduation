@@ -1,5 +1,25 @@
 <template>
-	<view class="content"><button class="btn" @click="btnClick">按钮</button></view>
+	
+	<view class="content">
+		<view class="top-bar">
+			<cl-search class="top-search" v-model="val" placeholder="搜索图片、文章、链接" @search="btnClick">
+				<cl-avatar src="" slot="prepend"></cl-avatar>
+			</cl-search>
+		</view>
+		<view class="banner">
+			<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+				<swiper-item v-for="item in list">
+					<view class="swiper-item">
+						<image :src="item" mode=""></image>
+					</view>
+				</swiper-item>
+			</swiper>
+			<view class="banner-tab">
+				
+			</view>
+		</view>
+		
+	</view>
 </template>
 
 <script>
@@ -8,11 +28,20 @@ import types from '../../common/types';
 export default {
 	data() {
 		return {
+			active:0,
 			userid: 'admin',
-			password: '000000'
+			password: '000000',
+			val:'',
+			list: [
+				'https://img1.baidu.com/it/u=2346282507,2171850944&fm=26&fmt=auto&gp=0.jpg',
+				'https://img1.baidu.com/it/u=167741595,2706197548&fm=26&fmt=auto&gp=0.jpg'
+				,'https://img0.baidu.com/it/u=1423826927,3205389665&fm=11&fmt=auto&gp=0.jpg',
+				]
 		};
 	},
-	onLoad() {},
+	onLoad() {
+		console.log(this.list)
+	},
 	methods: {
 		btnClick() {
 			let that = this;
@@ -21,23 +50,6 @@ export default {
 			formData.append('password', this.password);
 			formData.append('rememberLogin', 'true');
 			formData.append('cookie', 'true');
-			
-			
-			
-			
-			// console.log("点击")
-			// uni.request({
-			//     url: 'http://127.0.0.1:9311/api/_login/Login', //仅为示例，并非真实接口地址。
-			// 		method:'POST',
-			//     data: formData,
-			//     header: {
-			//         'Content-Type': 'multipart/form-data' //自定义请求头信息
-			//     },
-			//     success: (res) => {
-			//         console.log("请求",res.data);
-			//         this.text = 'request success';
-			//     }
-			// });
 
 			userLogin(formData).then(res => {
 				console.log("请求成功",res);
@@ -57,4 +69,35 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+	.content{
+		min-height: 100vh;
+		background-image: linear-gradient( 0deg,  rgb(247, 247, 247) 80%,#2C405A 85% );
+	}
+	.top-bar{
+		padding: 20rpx;
+	}
+	.top-search{
+		// height: 30rpx;
+		background-color: #2C405A;
+	}
+	.banner{
+		margin: 0 40rpx;
+		border-radius: 20rpx 20rpx;
+		overflow: hidden;
+		swiper{
+			height: 200rpx;
+			
+		}
+		.swiper-item image{
+			width: 100%;
+			overflow: hidden;
+		}
+		
+		.banner-tab{
+			width: 100%;
+			height: 100rpx;
+			background-color: #FFFFFF;
+		}
+	}
+</style>

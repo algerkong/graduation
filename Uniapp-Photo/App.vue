@@ -12,6 +12,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	@import "cl-uni/index.scss";
 	/*每个页面公共css */
 </style>

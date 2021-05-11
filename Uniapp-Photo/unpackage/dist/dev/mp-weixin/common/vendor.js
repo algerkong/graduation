@@ -822,7 +822,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7395,7 +7395,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7416,14 +7416,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7509,7 +7509,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"Uniapp-Photo","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7947,9 +7947,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!********************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/pages.json ***!
-  \********************************************/
+/*!*******************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/pages.json ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8089,24 +8089,17 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */
-/*!************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/store/index.js ***!
-  \************************************************/
+/* 11 */
+/*!***********************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/store/index.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 19));
-var _types = _interopRequireDefault(__webpack_require__(/*! ../common/types */ 49));var _mutations;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 12));
+var _types = _interopRequireDefault(__webpack_require__(/*! ../common/types */ 13));var _mutations;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.use(_vuex.default);
 
@@ -8134,7 +8127,7 @@ var store = new _vuex.default.Store({
 store;exports.default = _default;
 
 /***/ }),
-/* 19 */
+/* 12 */
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
   \********************************************/
@@ -9246,31 +9239,49 @@ var index = {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 20 */
-/*!*************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/index.js ***!
-  \*************************************************************/
+/* 13 */
+/*!************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/common/types.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./lib/axios */ 21);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var types = {
+  LOGIN: 'login',
+  LOGOUT: 'logout',
+  ISLOGIN: 'isLogin' };var _default =
+
+
+types;exports.default = _default;
 
 /***/ }),
-/* 21 */
-/*!*****************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/axios.js ***!
-  \*****************************************************************/
+/* 14 */
+/*!************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/index.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./lib/axios */ 15);
+
+/***/ }),
+/* 15 */
+/*!****************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/axios.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./utils */ 22);
-var bind = __webpack_require__(/*! ./helpers/bind */ 23);
-var Axios = __webpack_require__(/*! ./core/Axios */ 24);
-var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ 44);
-var defaults = __webpack_require__(/*! ./defaults */ 30);
+var utils = __webpack_require__(/*! ./utils */ 16);
+var bind = __webpack_require__(/*! ./helpers/bind */ 17);
+var Axios = __webpack_require__(/*! ./core/Axios */ 18);
+var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ 38);
+var defaults = __webpack_require__(/*! ./defaults */ 24);
 
 /**
                                        * Create an instance of Axios
@@ -9303,18 +9314,18 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 45);
-axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 46);
-axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 29);
+axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 39);
+axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 40);
+axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 23);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(/*! ./helpers/spread */ 47);
+axios.spread = __webpack_require__(/*! ./helpers/spread */ 41);
 
 // Expose isAxiosError
-axios.isAxiosError = __webpack_require__(/*! ./helpers/isAxiosError */ 48);
+axios.isAxiosError = __webpack_require__(/*! ./helpers/isAxiosError */ 42);
 
 module.exports = axios;
 
@@ -9322,17 +9333,17 @@ module.exports = axios;
 module.exports.default = axios;
 
 /***/ }),
-/* 22 */
-/*!*****************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/utils.js ***!
-  \*****************************************************************/
+/* 16 */
+/*!****************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/utils.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(/*! ./helpers/bind */ 23);
+var bind = __webpack_require__(/*! ./helpers/bind */ 17);
 
 /*global toString:true*/
 
@@ -9682,10 +9693,10 @@ module.exports = {
   stripBOM: stripBOM };
 
 /***/ }),
-/* 23 */
-/*!************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/bind.js ***!
-  \************************************************************************/
+/* 17 */
+/*!***********************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/bind.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9703,21 +9714,21 @@ module.exports = function bind(fn, thisArg) {
 };
 
 /***/ }),
-/* 24 */
-/*!**********************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/Axios.js ***!
-  \**********************************************************************/
+/* 18 */
+/*!*********************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/Axios.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
-var buildURL = __webpack_require__(/*! ../helpers/buildURL */ 25);
-var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 26);
-var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 27);
-var mergeConfig = __webpack_require__(/*! ./mergeConfig */ 44);
+var utils = __webpack_require__(/*! ./../utils */ 16);
+var buildURL = __webpack_require__(/*! ../helpers/buildURL */ 19);
+var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 20);
+var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 21);
+var mergeConfig = __webpack_require__(/*! ./mergeConfig */ 38);
 
 /**
                                              * Create a new instance of Axios
@@ -9808,17 +9819,17 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = Axios;
 
 /***/ }),
-/* 25 */
-/*!****************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/buildURL.js ***!
-  \****************************************************************************/
+/* 19 */
+/*!***************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/buildURL.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
+var utils = __webpack_require__(/*! ./../utils */ 16);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -9888,17 +9899,17 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 };
 
 /***/ }),
-/* 26 */
-/*!***********************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/InterceptorManager.js ***!
-  \***********************************************************************************/
+/* 20 */
+/*!**********************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/InterceptorManager.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
+var utils = __webpack_require__(/*! ./../utils */ 16);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -9950,20 +9961,20 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 module.exports = InterceptorManager;
 
 /***/ }),
-/* 27 */
-/*!********************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/dispatchRequest.js ***!
-  \********************************************************************************/
+/* 21 */
+/*!*******************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/dispatchRequest.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
-var transformData = __webpack_require__(/*! ./transformData */ 28);
-var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 29);
-var defaults = __webpack_require__(/*! ../defaults */ 30);
+var utils = __webpack_require__(/*! ./../utils */ 16);
+var transformData = __webpack_require__(/*! ./transformData */ 22);
+var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 23);
+var defaults = __webpack_require__(/*! ../defaults */ 24);
 
 /**
                                         * Throws a `Cancel` if cancellation has been requested.
@@ -10039,17 +10050,17 @@ module.exports = function dispatchRequest(config) {
 };
 
 /***/ }),
-/* 28 */
-/*!******************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/transformData.js ***!
-  \******************************************************************************/
+/* 22 */
+/*!*****************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/transformData.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
+var utils = __webpack_require__(/*! ./../utils */ 16);
 
 /**
                                     * Transform the data for a request or a response
@@ -10069,10 +10080,10 @@ module.exports = function transformData(data, headers, fns) {
 };
 
 /***/ }),
-/* 29 */
-/*!***************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/cancel/isCancel.js ***!
-  \***************************************************************************/
+/* 23 */
+/*!**************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/cancel/isCancel.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10084,18 +10095,18 @@ module.exports = function isCancel(value) {
 };
 
 /***/ }),
-/* 30 */
-/*!********************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/defaults.js ***!
-  \********************************************************************/
+/* 24 */
+/*!*******************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/defaults.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(/*! ./utils */ 22);
-var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 33);
+var utils = __webpack_require__(/*! ./utils */ 16);
+var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 27);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded' };
@@ -10111,10 +10122,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(/*! ./adapters/xhr */ 34);
+    adapter = __webpack_require__(/*! ./adapters/xhr */ 28);
   } else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(/*! ./adapters/http */ 34);
+    adapter = __webpack_require__(/*! ./adapters/http */ 28);
   }
   return adapter;
 }
@@ -10190,10 +10201,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 });
 
 module.exports = defaults;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 31)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../软件/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 25)))
 
 /***/ }),
-/* 31 */
+/* 25 */
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -10224,7 +10235,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 32);
+        if (!path) path = __webpack_require__(/*! path */ 26);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -10237,7 +10248,7 @@ exports.features = {};
 
 
 /***/ }),
-/* 32 */
+/* 26 */
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -10547,20 +10558,20 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 31)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 25)))
 
 /***/ }),
-/* 33 */
-/*!***************************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
-  \***************************************************************************************/
+/* 27 */
+/*!**************************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ 22);
+var utils = __webpack_require__(/*! ../utils */ 16);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -10572,24 +10583,24 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 };
 
 /***/ }),
-/* 34 */
-/*!************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/adapters/xhr.js ***!
-  \************************************************************************/
+/* 28 */
+/*!***********************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/adapters/xhr.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
-var settle = __webpack_require__(/*! ./../core/settle */ 35);
-var cookies = __webpack_require__(/*! ./../helpers/cookies */ 38);
-var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 25);
-var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ 39);
-var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 42);
-var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 43);
-var createError = __webpack_require__(/*! ../core/createError */ 36);
+var utils = __webpack_require__(/*! ./../utils */ 16);
+var settle = __webpack_require__(/*! ./../core/settle */ 29);
+var cookies = __webpack_require__(/*! ./../helpers/cookies */ 32);
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 19);
+var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ 33);
+var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 36);
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 37);
+var createError = __webpack_require__(/*! ../core/createError */ 30);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -10761,17 +10772,17 @@ module.exports = function xhrAdapter(config) {
 };
 
 /***/ }),
-/* 35 */
-/*!***********************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/settle.js ***!
-  \***********************************************************************/
+/* 29 */
+/*!**********************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/settle.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(/*! ./createError */ 36);
+var createError = __webpack_require__(/*! ./createError */ 30);
 
 /**
                                              * Resolve or reject a Promise based on response status.
@@ -10796,17 +10807,17 @@ module.exports = function settle(resolve, reject, response) {
 };
 
 /***/ }),
-/* 36 */
-/*!****************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/createError.js ***!
-  \****************************************************************************/
+/* 30 */
+/*!***************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/createError.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(/*! ./enhanceError */ 37);
+var enhanceError = __webpack_require__(/*! ./enhanceError */ 31);
 
 /**
                                                * Create an Error with the specified message, config, error code, request and response.
@@ -10824,10 +10835,10 @@ module.exports = function createError(message, config, code, request, response) 
 };
 
 /***/ }),
-/* 37 */
-/*!*****************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/enhanceError.js ***!
-  \*****************************************************************************/
+/* 31 */
+/*!****************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/enhanceError.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10876,17 +10887,17 @@ module.exports = function enhanceError(error, config, code, request, response) {
 };
 
 /***/ }),
-/* 38 */
-/*!***************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/cookies.js ***!
-  \***************************************************************************/
+/* 32 */
+/*!**************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/cookies.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
+var utils = __webpack_require__(/*! ./../utils */ 16);
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -10938,18 +10949,18 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 39 */
-/*!******************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/buildFullPath.js ***!
-  \******************************************************************************/
+/* 33 */
+/*!*****************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/buildFullPath.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isAbsoluteURL = __webpack_require__(/*! ../helpers/isAbsoluteURL */ 40);
-var combineURLs = __webpack_require__(/*! ../helpers/combineURLs */ 41);
+var isAbsoluteURL = __webpack_require__(/*! ../helpers/isAbsoluteURL */ 34);
+var combineURLs = __webpack_require__(/*! ../helpers/combineURLs */ 35);
 
 /**
                                                       * Creates a new URL by combining the baseURL with the requestedURL,
@@ -10968,10 +10979,10 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 };
 
 /***/ }),
-/* 40 */
-/*!*********************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
-  \*********************************************************************************/
+/* 34 */
+/*!********************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10992,10 +11003,10 @@ module.exports = function isAbsoluteURL(url) {
 };
 
 /***/ }),
-/* 41 */
-/*!*******************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/combineURLs.js ***!
-  \*******************************************************************************/
+/* 35 */
+/*!******************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/combineURLs.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11016,17 +11027,17 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 };
 
 /***/ }),
-/* 42 */
-/*!********************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/parseHeaders.js ***!
-  \********************************************************************************/
+/* 36 */
+/*!*******************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
+var utils = __webpack_require__(/*! ./../utils */ 16);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -11079,17 +11090,17 @@ module.exports = function parseHeaders(headers) {
 };
 
 /***/ }),
-/* 43 */
-/*!***********************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
-  \***********************************************************************************/
+/* 37 */
+/*!**********************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 22);
+var utils = __webpack_require__(/*! ./../utils */ 16);
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -11156,17 +11167,17 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 44 */
-/*!****************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/core/mergeConfig.js ***!
-  \****************************************************************************/
+/* 38 */
+/*!***************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/core/mergeConfig.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ 22);
+var utils = __webpack_require__(/*! ../utils */ 16);
 
 /**
                                   * Config-specific merge-function which creates a new config-object
@@ -11253,10 +11264,10 @@ module.exports = function mergeConfig(config1, config2) {
 };
 
 /***/ }),
-/* 45 */
-/*!*************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/cancel/Cancel.js ***!
-  \*************************************************************************/
+/* 39 */
+/*!************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/cancel/Cancel.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11282,17 +11293,17 @@ Cancel.prototype.__CANCEL__ = true;
 module.exports = Cancel;
 
 /***/ }),
-/* 46 */
-/*!******************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/cancel/CancelToken.js ***!
-  \******************************************************************************/
+/* 40 */
+/*!*****************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/cancel/CancelToken.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(/*! ./Cancel */ 45);
+var Cancel = __webpack_require__(/*! ./Cancel */ 39);
 
 /**
                                    * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -11349,10 +11360,10 @@ CancelToken.source = function source() {
 module.exports = CancelToken;
 
 /***/ }),
-/* 47 */
-/*!**************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/spread.js ***!
-  \**************************************************************************/
+/* 41 */
+/*!*************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/spread.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11386,10 +11397,10 @@ module.exports = function spread(callback) {
 };
 
 /***/ }),
-/* 48 */
-/*!********************************************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/node_modules/axios/lib/helpers/isAxiosError.js ***!
-  \********************************************************************************/
+/* 42 */
+/*!*******************************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/axios/lib/helpers/isAxiosError.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11407,33 +11418,21 @@ module.exports = function isAxiosError(payload) {
 };
 
 /***/ }),
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
 /* 49 */
-/*!*************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/common/types.js ***!
-  \*************************************************/
+/*!****************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/network/api/user.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var types = {
-  LOGIN: 'login',
-  LOGOUT: 'logout',
-  ISLOGIN: 'isLogin' };var _default =
-
-
-types;exports.default = _default;
-
-/***/ }),
-/* 50 */
-/*!*****************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/network/api/user.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.userLogin = userLogin;exports.userLogout = userLogout;exports.SearchVirus = SearchVirus;var _request = __webpack_require__(/*! ../request */ 51);
+Object.defineProperty(exports, "__esModule", { value: true });exports.userLogin = userLogin;exports.userLogout = userLogout;exports.SearchVirus = SearchVirus;var _request = __webpack_require__(/*! ../request */ 50);
 
 
 function userLogin(formData) {
@@ -11464,18 +11463,18 @@ function SearchVirus(data) {
 }
 
 /***/ }),
-/* 51 */
-/*!****************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/network/request.js ***!
-  \****************************************************/
+/* 50 */
+/*!***************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/network/request.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.request = request;var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ 20));
-var _const = _interopRequireDefault(__webpack_require__(/*! ../common/const */ 52));
-var _store = _interopRequireDefault(__webpack_require__(/*! ../store */ 18));
-var _types = _interopRequireDefault(__webpack_require__(/*! ../common/types */ 49));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.request = request;var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ 14));
+var _const = _interopRequireDefault(__webpack_require__(/*! ../common/const */ 51));
+var _store = _interopRequireDefault(__webpack_require__(/*! ../store */ 11));
+var _types = _interopRequireDefault(__webpack_require__(/*! ../common/types */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 function request(config) {
   var instance = _axios.default.create({
@@ -11520,10 +11519,10 @@ function request(config) {
 }
 
 /***/ }),
-/* 52 */
-/*!*************************************************!*\
-  !*** E:/2021 毕业设计/Uniapp-Photo/common/const.js ***!
-  \*************************************************/
+/* 51 */
+/*!************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/common/const.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11531,6 +11530,455 @@ function request(config) {
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var baseUrl = "/api";var _default =
 
 baseUrl;exports.default = _default;
+
+/***/ }),
+/* 52 */,
+/* 53 */
+/*!*************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/cl-uni/index.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });Object.defineProperty(exports, "Storage", { enumerable: true, get: function get() {return _storage.default;} });Object.defineProperty(exports, "Emitter", { enumerable: true, get: function get() {return _emitter.default;} });exports.default = void 0;var _storage = _interopRequireDefault(__webpack_require__(/*! ./utils/storage */ 54));
+var _emitter = _interopRequireDefault(__webpack_require__(/*! ./mixins/emitter */ 55));
+var _utils = __webpack_require__(/*! ./utils */ 56);
+
+__webpack_require__(/*! ./common */ 57);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var install = function install(Vue) {var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  // 默认配置数据
+  var data = {
+    // 首页页面路径
+    homePage: "/" };
+
+
+  var $cl = _objectSpread(_objectSpread({},
+  (0, _utils.deepMerge)(data, options)), {}, {
+    Storage: _storage.default,
+    author: "cool",
+    version: "1.8.3" });
+
+
+  Vue.prototype.$cl = uni.$cl = $cl;
+};var _default =
+
+
+
+{
+  install: install };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 54 */
+/*!*********************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/cl-uni/utils/storage.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  // 后缀标识
+  suffix: "_deadtime",
+
+  /**
+                        * 获取
+                        * @param {*} key 关键字
+                        */
+  get: function get(key) {
+    return uni.getStorageSync(key);
+  },
+
+  /**
+      * 获取全部
+      */
+  info: function info() {
+    return uni.getStorageInfoSync();
+  },
+
+  /**
+      * 设置
+      * @param {*} key 关键字
+      * @param {*} value 值
+      * @param {*} expires 过期时间
+      */
+  set: function set(key, value, expires) {
+    uni.setStorageSync(key, value);
+
+    if (expires) {
+      uni.setStorageSync("".concat(key).concat(this.suffix), Date.parse(new Date()) + expires * 1000);
+    }
+  },
+
+  /**
+      * 是否过期
+      * @param {*} key 关键字
+      */
+  isExpired: function isExpired(key) {
+    return uni.getStorageSync("".concat(key).concat(this.suffix)) - Date.parse(new Date()) <= 0;
+  },
+
+  /**
+      * 移除
+      * @param {*} key 关键字
+      */
+  remove: function remove(key) {
+    return uni.removeStorageSync(key);
+  },
+
+  /**
+      * 清理
+      */
+  clear: function clear() {
+    uni.clearStorageSync();
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 55 */
+/*!**********************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/cl-uni/mixins/emitter.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _broadcast(componentName, eventName, params) {
+  this.$children.forEach(function (child) {
+    var name = child.$options.componentName;
+
+    if (name === componentName) {
+      child.$emit.apply(child, [eventName].concat(params));
+    } else {
+      _broadcast.apply(child, [componentName, eventName].concat(params));
+    }
+  });
+}var _default =
+
+{
+  methods: {
+    dispatch: function dispatch(componentName, eventName, params) {
+      var parent = this.$parent || this.$root;
+      var name = parent.$options.componentName;
+
+      while (parent && (!name || name !== componentName)) {
+        parent = parent.$parent;
+
+        if (parent) {
+          name = parent.$options.componentName;
+        }
+      }
+      if (parent) {
+        parent.$emit.apply(parent, [eventName].concat(params));
+      }
+    },
+    broadcast: function broadcast(componentName, eventName, params) {
+      _broadcast.call(this, componentName, eventName, params);
+    } } };exports.default = _default;
+
+/***/ }),
+/* 56 */
+/*!*******************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/cl-uni/utils/index.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.isArray = isArray;exports.isObject = isObject;exports.isFunction = isFunction;exports.isString = isString;exports.isNull = isNull;exports.isBoolean = isBoolean;exports.isNumber = isNumber;exports.isDecimal = isDecimal;exports.isPromise = isPromise;exports.isEmpty = isEmpty;exports.last = last;exports.firstUpperCase = firstUpperCase;exports.debounce = debounce;exports.compareValue = compareValue;exports.cloneDeep = cloneDeep;exports.deepMerge = deepMerge;exports.getCurrentPage = getCurrentPage;exports.parseRpx = parseRpx;exports.getParent = getParent;exports.getCurrentColor = getCurrentColor;exports.getQueryString = getQueryString;exports.orderBy = orderBy;exports.isDev = void 0; // 是否开发模式
+var isDev = "development" == "development";
+
+// 是否Array类型
+exports.isDev = isDev;function isArray(value) {
+  if (typeof Array.isArray === "function") {
+    return Array.isArray(value);
+  } else {
+    return Object.prototype.toString.call(value) === "[object Array]";
+  }
+}
+
+// 是否Object类型
+function isObject(value) {
+  return Object.prototype.toString.call(value) === "[object Object]";
+}
+
+// 是否Function类型
+function isFunction(value) {
+  return typeof value === "function";
+}
+
+// 是否String类型
+function isString(value) {
+  return typeof value === "string";
+}
+
+// 是否null类型
+function isNull(value) {
+  return !value && value !== 0;
+}
+
+// 是否Boolean类型
+function isBoolean(value) {
+  return typeof value === "boolean";
+}
+
+// 是否数字类型
+function isNumber(value) {
+  return typeof value === "number" && !isNaN(value);
+}
+
+// 是否小数
+function isDecimal(value) {
+  return String(value).length - String(value).indexOf(".") + 1;
+}
+
+// 是否Promise类型
+function isPromise(obj) {
+  obj !== null && (
+  typeof obj === "object" || typeof obj === "function") &&
+  typeof obj.then === "function";
+}
+
+// 是否为空
+function isEmpty(value) {
+  if (isArray(value)) {
+    return value.length === 0;
+  }
+
+  if (isObject(value)) {
+    return Object.keys(value).length === 0;
+  }
+
+  return value === "" || value === undefined || value === null;
+}
+
+// 取最后一个值
+function last(data) {
+  if (isArray(data) || isString(data)) {
+    return data[data.length - 1];
+  }
+}
+
+// 首字母大写
+function firstUpperCase(value) {
+  return value.replace(/\b(\w)(\w*)/g, function ($0, $1, $2) {
+    return $1.toUpperCase() + $2.toLowerCase();
+  });
+}
+
+// 防抖
+function debounce(fn, wait, immediate) {
+  var timer;
+  return function () {var _arguments = arguments,_this = this;
+    if (timer) clearTimeout(timer);
+    if (immediate) {
+      var callNow = !timer;
+      timer = setTimeout(function () {
+        timer = null;
+      }, wait);
+      if (callNow) {
+        fn.apply(this, arguments);
+      }
+    } else {
+      timer = setTimeout(function () {
+        fn.apply(_this, _arguments);
+      }, wait);
+    }
+  };
+}
+
+// 比较值
+function compareValue(a, b) {
+  return String(a) === String(b);
+}
+
+// 深拷贝
+function cloneDeep(v) {
+  if (isObject(v)) {
+    var d = {};
+
+    for (var k in v) {
+      if (v.hasOwnProperty && v.hasOwnProperty(k)) {
+        if (v[k] && typeof v[k] === "object") {
+          d[k] = cloneDeep(v[k]);
+        } else {
+          d[k] = v[k];
+        }
+      }
+    }
+
+    return d;
+  } else if (isArray(v)) {
+    return v.map(cloneDeep);
+  } else {
+    return v;
+  }
+}
+
+// 深度合并
+function deepMerge(a, b) {
+  var k;
+  for (k in b) {
+    a[k] =
+    a[k] && a[k].toString() === "[object Object]" ? deepMerge(a[k], b[k]) : a[k] = b[k];
+  }
+  return a;
+}
+
+// 获取当前页面信息
+function getCurrentPage() {var _last =
+  last(getCurrentPages()),route = _last.route,$page = _last.$page,options = _last.options,$route = _last.$route;
+
+  return {
+    path: "/".concat(route),
+    fullPath: $page.fullPath,
+
+    query: options };
+
+
+
+
+
+}
+
+/**
+   * 解析rpx
+   * @param {*} val
+   */
+function parseRpx(val) {
+  return isArray(val) ? val.map(parseRpx).join(" ") : isNumber(val) ? val + "rpx" : val;
+}
+
+/**
+   * 获取父级节点
+   * @param {*} name componentName
+   * @param {*} keys 保留的参数，避免 computed 非 H5 解析失败
+   */
+function getParent(name, keys) {
+  var parent = this.$parent;
+
+  while (parent) {
+    if (parent.$options.componentName !== name) {
+      parent = parent.$parent;
+    } else {
+      return keys.reduce(function (result, key) {
+        result[key] = parent[key];
+        return result;
+      }, {});
+    }
+  }
+
+  return null;
+}
+
+/**
+   * 获取当前颜色
+   *
+   * @param {*} { color, max, value }
+   */
+function getCurrentColor(_ref) {var color = _ref.color,max = _ref.max,value = _ref.value;
+  if (isString(color)) {
+    return color;
+  } else {
+    var colorArray = color.
+    map(function (item, index) {
+      if (isString(item)) {
+        return {
+          color: item,
+          value: (index + 1) * (max / color.length) };
+
+      }
+      return item;
+    }).
+    sort(function (a, b) {return a.value - b.value;});
+
+    for (var i = 0; i < colorArray.length; i++) {
+      if (colorArray[i].value >= value) {
+        return colorArray[i].color;
+      }
+    }
+
+    return colorArray[colorArray.length - 1].color;
+  }
+}
+
+// 获取地址栏参数
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+}
+
+// 根据某个字段排序
+function orderBy(list, key) {
+  return list.sort(function (a, b) {return a[key] - b[key];});
+}
+
+/***/ }),
+/* 57 */
+/*!**************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/cl-uni/common.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+Promise.prototype.done = function (cb) {
+  var P = this.constructor;
+
+  return this.then(
+  function (value) {return P.resolve(cb()).then(function () {return value;});},
+  function (reason) {return (
+      P.resolve(cb()).then(function () {
+        throw reason;
+      }));});
+
+};
+
+/***/ }),
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */
+/*!*******************************************************************************!*\
+  !*** E:/a-code/毕设/graduation/Uniapp-Photo/node_modules/cl-uni/mixins/form.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = __webpack_require__(/*! ../utils */ 56);var _default =
+
+{
+  computed: {
+    $form: function $form() {
+      return _utils.getParent.call(this, "ClForm", [
+      "labelWidth",
+      "labelPosition",
+      "showMessage",
+      "model",
+      "validateOnValueChange",
+      "disabled"]);
+
+    },
+
+    isDisabled: function isDisabled() {
+      return this.$form ? this.$form.disabled || this.disabled : this.disabled;
+    } } };exports.default = _default;
 
 /***/ })
 ]]);

@@ -1,4 +1,8 @@
 {
   "navigationBarTitleText": "uni-app",
-  "usingComponents": {}
+  "usingComponents": {
+    "cl-search": "/node-modules/cl-uni/components/cl-search/cl-search",
+    "cl-avatar": "/node-modules/cl-uni/components/cl-avatar/cl-avatar",
+    "cl-swiper": "/node-modules/cl-uni/components/cl-swiper/cl-swiper"
+  }
 }

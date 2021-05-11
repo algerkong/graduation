@@ -1,3 +1,8 @@
+@import "cl-uni/theme.scss";
+
+
+
+
 /**
  * 这里是uni-app内置的常用样式变量
  *
@@ -15,10 +20,21 @@
 /* 颜色变量 */
 
 /* 行为相关颜色 */
-$uni-color-primary: #007aff;
-$uni-color-success: #4cd964;
-$uni-color-warning: #f0ad4e;
-$uni-color-error: #dd524d;
+// $uni-color-primary: #007aff;
+// $uni-color-success: #4cd964;
+// $uni-color-warning: #f0ad4e;
+// $uni-color-error: #dd524d;
+
+
+/* 默认主题色 */
+$cl-color-primary: #409eff;
+$cl-color-default: #dcdfe6;
+$cl-color-success: #67c23a;
+$cl-color-warning: #e6a23c;
+$cl-color-error: #dd524d;
+$cl-color-info: #909399;
+$cl-color-disabled: #c0c4cc;
+
 
 /* 文字基本颜色 */
 $uni-text-color:#333;//基本色
