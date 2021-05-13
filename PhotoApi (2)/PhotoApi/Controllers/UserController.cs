@@ -32,6 +32,22 @@ namespace PhotoApi.Controllers
             }
         }
 
+        [ActionDescription("Login")]
+        [HttpPost("Login")]
+        public IActionResult Login(UserSearcher searcher)
+        {
+            if (ModelState.IsValid)
+            {
+                var vm = CreateVM<UserListVM>();
+                vm.Searcher = searcher;
+                return Content(vm.GetJson());
+            }
+            else
+            {
+                return BadRequest(ModelState.GetErrorJson());
+            }
+        }
+
         [ActionDescription("Get")]
         [HttpGet("{id}")]
         public UserVM Get(string id)

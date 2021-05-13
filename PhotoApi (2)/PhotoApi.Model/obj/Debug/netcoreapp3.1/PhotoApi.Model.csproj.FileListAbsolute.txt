@@ -541,3 +541,4 @@ E:\2021 毕业设计\PhotoApi (2)\PhotoApi.Model\obj\Debug\netcoreapp3.1\PhotoAp
 E:\2021 毕业设计\PhotoApi (2)\PhotoApi.Model\obj\Debug\netcoreapp3.1\PhotoApi.Model.csproj.CoreCompileInputs.cache
 E:\2021 毕业设计\PhotoApi (2)\PhotoApi.Model\obj\Debug\netcoreapp3.1\PhotoApi.Model.dll
 E:\2021 毕业设计\PhotoApi (2)\PhotoApi.Model\obj\Debug\netcoreapp3.1\PhotoApi.Model.pdb
+E:\2021 毕业设计\PhotoApi (2)\PhotoApi.Model\obj\Debug\netcoreapp3.1\PhotoApi.Model.csprojAssemblyReference.cache

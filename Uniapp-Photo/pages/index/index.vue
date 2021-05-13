@@ -8,8 +8,8 @@
 		</view>
 		<view class="banner">
 			<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
-				<swiper-item v-for="item in list">
-					<view class="swiper-item">
+				<swiper-item v-for="(item,index) in list">
+					<view class="swiper-item" @click="showImg(list,index)">
 						<image :src="item" mode=""></image>
 					</view>
 				</swiper-item>
@@ -18,7 +18,15 @@
 				
 			</view>
 		</view>
-		
+		<view class="dynamic">
+			<cl-grid :column="3" v-for="(colum,i) in 5" :key="i">
+						<cl-grid-item  v-for="(item, index) in 9" :key="index">
+								<view class="item-image">
+									<image class="image" src="https://img1.baidu.com/it/u=2346282507,2171850944&fm=26&fmt=auto&gp=0.jpg" mode="aspectFill"></image> 
+								</view>
+							</cl-grid-item>
+					</cl-grid>
+		</view>
 	</view>
 </template>
 
@@ -64,6 +72,15 @@ export default {
 					console.log(res);
 				});
 			});
+		},
+		showImg(list,index){
+			console.log(index)
+			uni.previewImage({
+				urls:list,
+				current:index,
+				indicator:'number',
+				loop:true
+				})
 		}
 	}
 };
@@ -99,5 +116,20 @@ export default {
 			height: 100rpx;
 			background-color: #FFFFFF;
 		}
+	}
+	
+	.image{
+		width: 226.6rpx;
+		height: 226.6rpx;
+	}
+	
+	.item-image{
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+		padding-bottom: 10rpx;
+	}
+	.dynamic{
+		padding: 20rpx;
 	}
 </style>

@@ -52,7 +52,6 @@ namespace PhotoApi.ViewModel.UserVMs
                 .OrderBy(x => x.ID);
             return query;
         }
-
     }
 
     public class User_View : User
